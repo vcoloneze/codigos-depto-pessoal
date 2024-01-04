@@ -1,0 +1,23 @@
+// calculo inss 2023
+function calcularINSS(salario) {
+  var tabelaINSS = [
+    [1320, 7.5],
+    [2571.29, 9],
+    [3856.94, 12],
+    [7507.49, 14]
+  ];
+
+  var descontoINSS = 0;
+  var faixaAnterior = 0;
+  
+  for (var i = 0; i < tabelaINSS.length; i++) {
+    if (salario <= tabelaINSS[i][0]) {
+      descontoINSS += (salario - faixaAnterior) * (tabelaINSS[i][1] / 100);
+      break;
+    } else {
+      descontoINSS += (tabelaINSS[i][0] - faixaAnterior) * (tabelaINSS[i][1] / 100);
+      faixaAnterior = tabelaINSS[i][0];
+    }
+  }
+  
+  return descontoINSS;
