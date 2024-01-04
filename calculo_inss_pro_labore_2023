@@ -1,0 +1,7 @@
+//calculo inss pro labore 2023
+function calcularINSSProLabore(proLabore) {
+  var aliquotaINSS = 11;
+  var descontoINSS = proLabore * (aliquotaINSS / 100);
+  
+  return descontoINSS;
+}
